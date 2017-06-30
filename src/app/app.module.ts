@@ -3,7 +3,6 @@ import { NgModule } from '@angular/core';
 
 import { AppComponent } from './app.component';
 import {createResourceModule} from './resource/index';
-// import {ResourceModule} from './resource/index';
 
 @NgModule({
   declarations: [

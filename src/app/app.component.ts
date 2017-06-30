@@ -11,8 +11,4 @@ export class AppComponent {
 
   ) {}
 
-  logBla() {
-
-  }
-
 }
