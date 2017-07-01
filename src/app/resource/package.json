@@ -1,6 +1,6 @@
 {
   "name": "@tsmean/resource",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Service layer for generic resources",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -10,7 +10,8 @@
     "url": "git+https://github.com/bersling/resource-module.git"
   },
   "keywords": [
-    "Resource", "tsmean"
+    "Resource",
+    "tsmean"
   ],
   "author": "bersling@gmail.com",
   "license": "MIT",

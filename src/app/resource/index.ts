@@ -3,6 +3,9 @@ import { CommonModule } from '@angular/common';
 
 export const ApiUrl = new InjectionToken('Resource.ApiUrl');
 
+export * from './resource.service';
+export * from './resource';
+
 export function createResourceModule(apiUrl: string) {
   @NgModule({
     imports: [
