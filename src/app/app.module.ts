@@ -10,7 +10,7 @@ import {createResourceModule} from './resource/index';
   ],
   imports: [
     BrowserModule,
-    // createResourceModule('http://demo.tsmean.com:4242/api/v1/')
+    createResourceModule('http://demo.tsmean.com:4242/api/v1/')
   ],
   providers: [],
   bootstrap: [AppComponent]

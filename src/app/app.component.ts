@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import {ResourceService} from './resource/resource.service';
 
 @Component({
   selector: 'app-root',
@@ -8,7 +9,9 @@ import { Component } from '@angular/core';
 export class AppComponent {
 
   constructor(
-
-  ) {}
+    private resourceService: ResourceService
+  ) {
+    resourceService.getResources('heroes');
+  }
 
 }

@@ -13,7 +13,6 @@ import {Observable} from 'rxjs/Observable';
 @Injectable()
 export class ResourceService {
 
-
   constructor(
     private http: Http,
     @Inject(ApiUrl) private apiUrl: string
