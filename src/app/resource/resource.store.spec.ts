@@ -1,10 +1,7 @@
 import { TestBed, inject } from '@angular/core/testing';
 
 import { ResourceService } from './resource.service';
-import {HttpModule, ResponseOptions, XHRBackend, Response} from '@angular/http';
-import {MockBackend, MockConnection} from '@angular/http/testing';
-import {ApiUrl} from './index';
-import {ResourceStoreService} from './resource-store.service';
+import {ResourceStoreService} from './resource.store';
 
 describe('ResourceService', () => {
   beforeEach(() => {
