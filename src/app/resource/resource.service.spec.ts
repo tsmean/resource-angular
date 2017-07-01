@@ -6,6 +6,7 @@ import {MockBackend, MockConnection} from '@angular/http/testing';
 import {ApiUrl} from './index';
 
 describe('ResourceService', () => {
+
   beforeEach(() => {
     TestBed.configureTestingModule({
       providers: [

@@ -28,32 +28,37 @@ export class ResourceService {
 
 
   getResources(resourceName: string): Observable<Resource[]> {
-    return this.http.get(this.resourcesUrl(resourceName))
-      .map(resp => resp.json().data)
-      .catch(this.handleError);
+    const $data = this.http.get(this.resourcesUrl(resourceName))
+      .map(resp => resp.json().data);
+    return $data.catch(this.handleError);
   }
 
   getResource(resourceId: string, resourceName: string): Observable<Resource> {
-    return this.http.get(WebUtils.urlJoin(this.resourcesUrl(resourceName), resourceId))
-      .map(resp => resp.json().data)
+    const $data = this.http.get(WebUtils.urlJoin(this.resourcesUrl(resourceName), resourceId))
+      .map(resp => resp.json().data);
+    return $data
       .catch(this.handleError);
   }
 
   createResource(newResource: Resource, resourceName: string): Observable<Resource> {
-    return this.http.post(this.resourcesUrl(resourceName), newResource)
-      .map(resp => resp.json().data)
-      .catch(this.handleError);
+    const $data = this.http.post(this.resourcesUrl(resourceName), newResource)
+      .map(resp => resp.json().data);
+    return $data.catch(this.handleError);
   }
 
   updateResource(resource: Resource, resourceName: string): Observable<Resource> {
-    return this.http.put(this.resourcesUrl(resourceName), resource)
-      .map(resp => resp.json().data)
+
+    const $data = this.http.put(this.resourcesUrl(resourceName), resource)
+      .map(resp => resp.json().data);
+    return $data
       .catch(this.handleError);
   }
 
   deleteResource(resourceId: string, resourceName: string): Observable<Resource> {
-    return this.http.delete(WebUtils.urlJoin(this.resourcesUrl(resourceName), resourceId))
-      .map(resp => resp.json().data)
+
+    const $data = this.http.delete(WebUtils.urlJoin(this.resourcesUrl(resourceName), resourceId))
+      .map(resp => resp.json().data);
+    return $data
       .catch(this.handleError);
   }
 
