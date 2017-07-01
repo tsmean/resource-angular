@@ -6,11 +6,6 @@ import {ResourceStoreService} from './resource.store';
 
 export const ApiUrl = new InjectionToken('Resource.ApiUrl');
 
-export * from './resource.service';
-export * from './resource';
-export * from './resource.store';
-
-
 export function createResourceModule(apiUrl: string) {
   @NgModule({
     imports: [
