@@ -16,9 +16,6 @@ export function createResourceModule(apiUrl: string) {
       CommonModule,
       HttpModule
     ],
-    providers: [
-      { provide: ApiUrl, useValue: apiUrl },
-    ],
     declarations: []
   })
   class ResourceModule { }
@@ -26,6 +23,7 @@ export function createResourceModule(apiUrl: string) {
   return {
     ngModule: ResourceModule,
     providers: [
+      { provide: ApiUrl, useValue: apiUrl },
       ResourceService
     ]
   };
