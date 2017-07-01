@@ -1,4 +1,4 @@
-import {Inject, Injectable} from '@angular/core';
+import {forwardRef, Inject, Injectable} from '@angular/core';
 import { Http } from '@angular/http';
 
 import 'rxjs/add/observable/of';
@@ -15,7 +15,7 @@ export class ResourceService {
 
   constructor(
     private http: Http,
-    @Inject(ApiUrl) private apiUrl: string
+    @Inject(forwardRef(() => ApiUrl)) private apiUrl: string
   ) { }
 
   /**

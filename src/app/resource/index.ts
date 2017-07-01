@@ -7,6 +7,7 @@ import {ResourceStoreService} from './resource.store';
 export const ApiUrl = new InjectionToken('Resource.ApiUrl');
 
 export function createResourceModule(apiUrl: string) {
+
   @NgModule({
     imports: [
       CommonModule,
