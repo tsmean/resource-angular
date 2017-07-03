@@ -2,10 +2,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
 import { AppComponent } from './app.component';
-import {createResourceModule} from './resource/index';
-
-const resourceModule =
-  createResourceModule('http://demo.tsmean.com:4242/api/v1/');
+import {ResourceModule} from './resource/index';
 
 @NgModule({
   declarations: [
@@ -13,7 +10,7 @@ const resourceModule =
   ],
   imports: [
     BrowserModule,
-    resourceModule
+    ResourceModule.forRoot('blablub')
   ],
   providers: [],
   bootstrap: [AppComponent]

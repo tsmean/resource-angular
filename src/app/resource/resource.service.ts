@@ -1,21 +1,21 @@
-import {forwardRef, Inject, Injectable} from '@angular/core';
+import {forwardRef, Inject, Injectable, InjectionToken} from '@angular/core';
 import { Http } from '@angular/http';
 
 import 'rxjs/add/observable/of';
 import 'rxjs/add/operator/map';
 import 'rxjs/add/operator/catch';
 import {Resource} from './resource';
-import { ApiUrl } from './index';
 
 import { WebUtils } from '@tsmean/utils';
 import {Observable} from 'rxjs/Observable';
+import {ApiUrl} from './api-url-injection-token';
 
 @Injectable()
 export class ResourceService {
 
   constructor(
-    private http: Http,
-    @Inject(forwardRef(() => ApiUrl)) private apiUrl: string
+    @Inject(ApiUrl) private apiUrl: string,
+    private http: Http
   ) { }
 
   /**
@@ -23,7 +23,9 @@ export class ResourceService {
    * yields e.g http://myserver/api/v1/users
    */
   private resourcesUrl(resourceName: string) {
-    return WebUtils.urlJoin(this.apiUrl, resourceName);
+    return WebUtils.urlJoin(
+      this.apiUrl,
+      resourceName);
   };
 
 
