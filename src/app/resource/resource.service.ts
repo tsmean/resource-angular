@@ -3,6 +3,7 @@ import { Http } from '@angular/http';
 
 import 'rxjs/add/observable/of';
 import 'rxjs/add/operator/map';
+import 'rxjs/add/operator/share';
 import 'rxjs/add/operator/catch';
 import {Resource} from './resource';
 
@@ -31,27 +32,27 @@ export class ResourceService {
 
   getResources(resourceName: string): Observable<Resource[]> {
     const $data = this.http.get(this.resourcesUrl(resourceName))
-      .map(resp => resp.json().data);
+      .map(resp => resp.json().data).share();
     return $data.catch(this.handleError);
   }
 
   getResource(resourceId: string, resourceName: string): Observable<Resource> {
     const $data = this.http.get(WebUtils.urlJoin(this.resourcesUrl(resourceName), resourceId))
-      .map(resp => resp.json().data);
+      .map(resp => resp.json().data).share();
     return $data
       .catch(this.handleError);
   }
 
   createResource(newResource: Resource, resourceName: string): Observable<Resource> {
     const $data = this.http.post(this.resourcesUrl(resourceName), newResource)
-      .map(resp => resp.json().data);
+      .map(resp => resp.json().data).share();
     return $data.catch(this.handleError);
   }
 
   updateResource(resource: Resource, resourceName: string): Observable<Resource> {
 
     const $data = this.http.put(this.resourcesUrl(resourceName), resource)
-      .map(resp => resp.json().data);
+      .map(resp => resp.json().data).share();
     return $data
       .catch(this.handleError);
   }
@@ -59,7 +60,7 @@ export class ResourceService {
   deleteResource(resourceId: string, resourceName: string): Observable<Resource> {
 
     const $data = this.http.delete(WebUtils.urlJoin(this.resourcesUrl(resourceName), resourceId))
-      .map(resp => resp.json().data);
+      .map(resp => resp.json().data).share();
     return $data
       .catch(this.handleError);
   }
