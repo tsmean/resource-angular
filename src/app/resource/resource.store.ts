@@ -2,7 +2,6 @@
 import {Injectable} from '@angular/core';
 import {Resource} from './resource';
 import {BehaviorSubject} from 'rxjs/BehaviorSubject';
-import {Observable} from 'rxjs/Observable';
 @Injectable()
 export class ResourceStoreService {
 
